@@ -2,6 +2,7 @@ import { getStyles, setStyle } from "./database.js"
 
 const styles = getStyles()
 
+//styles value listener to invoke setter
 document.addEventListener(
     "change",
     (event) => {
@@ -11,6 +12,8 @@ document.addEventListener(
     }
 )
 
+
+//prints styles html
 export const JewelryStyles = () => {
     let html = "<ul>"
 

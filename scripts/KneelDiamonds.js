@@ -10,24 +10,27 @@ import { Orders } from "./Orders.js"
 
 
 
-
+//set empty object to store temp order
 let tempOrder = {}
 
+//click listener for the button
 document.addEventListener(
     "click",
     (event) => {
         if(event.target.id === 'orderButton'){
-            tempOrder = getTempOrder()
-            if (tempOrder.metalId && tempOrder.styleId && tempOrder.sizeId){
-                addCustomOrder()
+            tempOrder = getTempOrder() //grab the temp order
+            if (tempOrder.metalId && tempOrder.styleId && tempOrder.sizeId){ //make sure selections were made
+                addCustomOrder() //commit custom order to orders
             } else {
-                window.alert(`Please select all 3 options.`)
+                window.alert(`Please select all 3 options.`) //or show error message
 
             }
         }
     }
 )
 
+
+//all html
 export const KneelDiamonds = () => {
     return `
         <h1>Kneel Diamonds</h1>

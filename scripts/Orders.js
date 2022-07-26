@@ -1,5 +1,7 @@
 import { getMetals, getOrders, getSizes, getStyles } from "./database.js"
 
+
+//function to build the new list item and calculate price, will be invoked during the map callback
 const buildOrderListItem = (order) => {
 
     const metals = getMetals()

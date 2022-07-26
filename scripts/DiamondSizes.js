@@ -2,6 +2,7 @@ import { getSizes, setSize } from "./database.js"
 
 const sizes = getSizes()
 
+//value listener on the size radio buttons to invoke setter for temp order
 document.addEventListener(
     "change",
     (event) => {
@@ -11,6 +12,7 @@ document.addEventListener(
     }
 )
 
+//sizes html using map and join
 export const DiamondSizes = () => {
     let html = "<ul>"
 
