@@ -1,4 +1,4 @@
-import { getMetals, getOrders, getSizes, getStyles } from "./database.js"
+import { getMetals, getOrders, getSizes, getStyles, getTypes } from "./database.js"
 
 
 //function to build the new list item and calculate price, will be invoked during the map callback
@@ -7,6 +7,7 @@ const buildOrderListItem = (order) => {
     const metals = getMetals()
     const sizes = getSizes()
     const styles = getStyles()
+    const types = getTypes()
     
     // Remember that the function you pass to find() must return true/false
     const foundMetal = metals.find(
@@ -28,7 +29,13 @@ const buildOrderListItem = (order) => {
         }
     )
 
-    const totalCost = foundMetal.price + foundSize.price + foundStyle.price
+    const foundType = types.find(
+        (type) => {
+            return type.id === order.typeId
+        }
+    )
+
+    const totalCost = (foundMetal.price + foundSize.price + foundStyle.price) * foundType.multiplier
 
 
     return `<li>
