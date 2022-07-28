@@ -1,4 +1,4 @@
-import { getMetals, getOrders, getSizes, getStyles, getTypes } from "./database.js"
+import { getMetals, getOrders, getSizes, getStyles, getTypes } from "./dataAccess.js"
 
 
 //function to build the new list item and calculate price, will be invoked during the map callback

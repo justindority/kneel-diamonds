@@ -3,7 +3,7 @@ import { KneelDiamonds } from "./KneelDiamonds.js"
 const mainContainer = document.querySelector("#container")
 
 //function to render all html
-const renderAllHTML = () => {
+export const renderAllHTML = () => {
     mainContainer.innerHTML = KneelDiamonds()
 }
 
